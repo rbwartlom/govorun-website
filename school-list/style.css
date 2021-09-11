@@ -162,7 +162,7 @@
 .timetableSelect__button{font-size:12px;padding:6px 38px 6px 12px}
 .timetableSelect__button svg{right:19px}
 .timetableSelect__back{position:fixed;bottom:0;right:0;left:0;top:0;z-index:99;background:rgba(0,0,0,.3)}
-.timetableSelect__popup{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;height:calc(100% - 50px);border-radius:4px;width:260px;padding-bottom:66px}
+.timetableSelect__popup{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;height:calc(100% - 64px);border-radius:4px;width:calc(100% - 64px);padding-bottom:66px}
 .timetableSelect__list{overflow:auto;height:calc(100% - 47px)}
 .timetableSelect__title{display:block}
 .timetableButton__button{font-size:12px;padding:6px 12px}
