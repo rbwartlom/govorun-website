@@ -195,9 +195,9 @@ const initToggleBlocks = function(selector) {
 		const button = element.find('[data-element-button]');
 		const content = element.find('[data-element-content]');
 
-		if (!element.hasClass('open')) {
-			close(element, content);
-		}
+		// if (!element.hasClass('open')) {
+		// 	close(element, content);
+		// }
 
 		button.on('click', function() {
 			if (element.hasClass('open')) {
