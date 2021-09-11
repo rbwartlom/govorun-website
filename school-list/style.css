@@ -166,12 +166,13 @@
 .timetableSelect__list{overflow:auto;height:calc(100% - 47px)}
 .timetableSelect__title{display:block}
 .timetableButton__button{font-size:12px;padding:6px 12px}
+.timetableButton__button span{display:none}
 .timetableBlock__button{padding:10px 12px;font-size:12px}
 .timetableBlock__button svg{right:24px;padding:5px}
 .timetableBlock__content{padding:16px 12px}
 .timetableBlock__line{margin-bottom:16px;line-height:1.5}
 .timetableBlock__date{width:35%}
-.timetableBlock__info{width:calc(65% - 28px);display:block}
+.timetableBlock__info{width:calc(65% - 28px);display:flex;flex-direction:column}
 .timetableBlock__day{font-size:12px;margin-bottom:4px}
 .timetableBlock__time{font-size:10px}
 .timetableBlock__lesson{font-size:14px;margin-bottom:12px}

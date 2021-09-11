@@ -29,11 +29,14 @@ const initTimetableTabs = function(btn, elem) {
 		const element = elements.filter('[data-name="'+name+'"]');
 
 		if (!button.hasClass('active') && element[0]) {
+			const btnAll = element.find('.js-timetable-group[name="all"]:not(:checked)')
 			buttons.removeClass('active');
 			elements.removeClass('active');
 
 			element.addClass('active');
 			button.addClass('active');
+
+			btnAll && btnAll.trigger('click');
 		}
 	});
 
