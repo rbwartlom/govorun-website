@@ -1,1 +1,1298 @@
-Hello World
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Школа Говорун | Расписание занятий</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="timetable">
+		<div class="container">
+			<h1 class="timetable__title">Расписание занятий на 2021/22 учебный год</h1>
+
+			<div class="timetable__tabs">
+				<button class="timetable__tabBtn timetable__tabBtn_dark active js-timetable-tab-button" data-name="offline" type="button">Занятия в школе</button>
+				<button class="timetable__tabBtn timetable__tabBtn_light js-timetable-tab-button" data-name="online" type="button">Занятия онлайн</button>
+			</div>
+
+			<section class="timetable__tabElement js-timetable-tab-element active" data-name="offline">
+				<div class="timetable__controls js-timetable-form">
+					<div class="timetable__select timetableSelect js-timetable-select">
+						<button class="timetableSelect__button" type="button" data-element-toggle>
+							<span>Выберите возраст</span>
+							<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+						</button>
+
+						<div class="timetableSelect__back" data-element-close></div>
+
+						<div class="timetableSelect__popup" data-element-popup>
+							<div class="timetableSelect__title">
+								<span>Выберите возраст</span>
+								<button class="timetableSelect__close" type="button" data-element-close>
+									<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#cross"></use></svg>
+								</button>
+							</div>
+
+							<div class="timetableSelect__list">
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_preschoolers">Дошкольники</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="preschoolers:3-4-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>3 - 4 года</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="preschoolers:4-5-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>4 - 5 лет</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="preschoolers:5-6-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>5 - 6 лет</span>
+									</div>
+								</label>
+
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_pupils">Школьники</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="pupils:1-class" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>1 класс</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="pupils:2-class" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>2 класс</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="pupils:3-class" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>3 класс</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="pupils:4-class" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>4 класс</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="pupils:5-class" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>5 класс</span>
+									</div>
+								</label>
+
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_russian">РКИ (русский как иностранный)</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="russian:rki-level-3" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>Уровень 3</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="russian:rki-level-4" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>Уровень 4</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="russian:rki-level-5" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>Уровень 5</span>
+									</div>
+								</label>
+
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_baby">Мама и малыш</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="baby:3-4-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>3 - 4 года</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="baby:4-5-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>4 - 5 лет</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="baby:5-6-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>5 - 6 лет</span>
+									</div>
+								</label>
+							</div>
+
+							<button class="timetableSelect__submit disabled" type="button" data-element-submit>Показать</button>
+						</div>
+					</div>
+
+					<label class="timetable__btnGroup timetableButton timetableButton_all">
+						<input class="visually-hidden js-timetable-group" type="checkbox" name="all" checked>
+						<span class="timetableButton__button">Все группы</span>
+					</label>
+
+					<div class="timetable__groups">
+						<label class="timetable__btnGroup timetableButton timetableButton_preschoolers">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="preschoolers">
+							<span class="timetableButton__button">Дошкольники</span>
+						</label>
+
+						<label class="timetable__btnGroup timetableButton timetableButton_pupils">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="pupils">
+							<span class="timetableButton__button">Школьники</span>
+						</label>
+
+						<label class="timetable__btnGroup timetableButton timetableButton_russian">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="russian">
+							<span class="timetableButton__button">РКИ (русский как иностранный)</span>
+						</label>
+
+						<label class="timetable__btnGroup timetableButton timetableButton_baby">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="baby">
+							<span class="timetableButton__button">Мама и малыш</span>
+						</label>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_preschoolers open js-timetable-block" data-group="preschoolers" data-class="3-4-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">3 - 4 года</div>
+						<div class="timetableBlock__title">Ландыш</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:35 – 16:20</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_yellow" data-title="Желтая комната">
+									<span>Желтая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">15:35 – 16:20</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Музыкально-речевое развитие</span>
+								</div>
+								<div class="timetableBlock__teacher" data-title="Марья Васильевна Петрова">
+									<span>Марья Васильевна Петрова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_music" data-title="Музыкальная комната">
+									<span>Музыкальная комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">16:00 – 16:40</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Логика</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Лена Вебер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_online">
+									<span>Онлайн</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_preschoolers js-timetable-block" data-group="preschoolers" data-class="4-5-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">4 - 5 лет</div>
+						<div class="timetableBlock__title">Ромашка</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Вт.</div>
+								<div class="timetableBlock__time">16:00 – 16:40</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Развитие речи</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Мария Кормилицына</span>
+									<span>Марина Кормилицына</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_lightblue" data-title="Голубая комната">
+									<span>Голубая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">16:40 – 17:25</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_yellow" data-title="Желтая комната">
+									<span>Желтая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">17:25 – 17:55</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Музыка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Марианна Дирнхофер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_music" data-title="Музыкальная комната">
+									<span>Музыкальная комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_preschoolers js-timetable-block" data-group="preschoolers" data-class="5-6-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">5 - 6 лет</div>
+						<div class="timetableBlock__title">Светлячок</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Ср.</div>
+								<div class="timetableBlock__time">16:00 – 16:40</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Развитие речи</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Мария Кормилицына</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_blue" data-title="Синяя комната">
+									<span>Синяя комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">16:40 – 17:25</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_orange" data-title="Оранжевая комната">
+									<span>Оранжевая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">17:25 – 17:55</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Музыка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Марианна Дирнхофер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_green" data-title="Зеленая комната">
+									<span>Зеленая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_pupils js-timetable-block" data-group="pupils" data-class="1-class">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">1 класс</div>
+						<div class="timetableBlock__title">Пасенка</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пт.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room" data-index="F" data-title="F комната">
+									<span>F комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<hr>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Сб.</div>
+								<div class="timetableBlock__time">15:35 – 16:20</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Логика</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Лена Ломова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_online">
+									<span>Онлайн</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_pupils js-timetable-block" data-group="pupils" data-class="2-class">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">2 класс</div>
+						<div class="timetableBlock__title">Цыплята</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room" data-index="D" data-title="D комната">
+									<span>D комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_pupils js-timetable-block" data-group="pupils" data-class="3-class">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">3 класс</div>
+						<div class="timetableBlock__title">Снежинка</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room" data-index="E" data-title="E комната">
+									<span>E комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_pupils js-timetable-block" data-group="pupils" data-class="4-class">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">4 класс</div>
+						<div class="timetableBlock__title">Почемучки</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room" data-index="C" data-title="C комната">
+									<span>C комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_pupils js-timetable-block" data-group="pupils" data-class="5-class">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">5 класс</div>
+						<div class="timetableBlock__title">Орлята</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room" data-index="R" data-title="R комната">
+									<span>R комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_russian js-timetable-block" data-group="russian" data-class="rki-level-3">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">РКИ Уровень 3</div>
+						<div class="timetableBlock__title">Мячик</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Русский язык как иностранный</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Олеся Соммер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_orange" data-title="Оранжевая комната">
+									<span>Оранжевая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>St.-Pauls-Platz 8</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_russian js-timetable-block" data-group="russian" data-class="rki-level-4">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">РКИ Уровень 4</div>
+						<div class="timetableBlock__title">Кораблик</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Русский язык как иностранный</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Олеся Соммер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_orange" data-title="Оранжевая комната">
+									<span>Оранжевая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>St.-Pauls-Platz 8</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_russian js-timetable-block" data-group="russian" data-class="rki-level-5">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">РКИ Уровень 5</div>
+						<div class="timetableBlock__title">Радуга</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Русский язык как иностранный</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Олеся Соммер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_orange" data-title="Оранжевая комната">
+									<span>Оранжевая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>St.-Pauls-Platz 8</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_baby js-timetable-block" data-group="baby" data-class="3-4-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">3 - 4 года</div>
+						<div class="timetableBlock__title">Название группы</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_green" data-title="Зеленая комната">
+									<span>Зеленая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_baby js-timetable-block" data-group="baby" data-class="4-5-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">4 - 5 лет</div>
+						<div class="timetableBlock__title">Название группы</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_green" data-title="Зеленая комната">
+									<span>Зеленая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_baby js-timetable-block" data-group="baby" data-class="5-6-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">5 - 6 лет</div>
+						<div class="timetableBlock__title">Название группы</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_green" data-title="Зеленая комната">
+									<span>Зеленая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+
+
+
+			<section class="timetable__tabElement js-timetable-tab-element" data-name="online">
+				<div class="timetable__controls js-timetable-form">
+					<div class="timetable__select timetableSelect js-timetable-select">
+						<button class="timetableSelect__button" type="button" data-element-toggle>
+							<span>Выберите возраст</span>
+							<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+						</button>
+
+						<div class="timetableSelect__back" data-element-close></div>
+
+						<div class="timetableSelect__popup" data-element-popup>
+							<div class="timetableSelect__title">
+								<span>Выберите возраст</span>
+								<button class="timetableSelect__close" type="button" data-element-close>
+									<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#cross"></use></svg>
+								</button>
+							</div>
+
+							<div class="timetableSelect__list">
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_preschoolers">Дошкольники</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="preschoolers:3-4-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>3 - 4 года</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="preschoolers:4-5-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>4 - 5 лет</span>
+									</div>
+								</label>
+
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_pupils">Школьники</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="pupils:1-class" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>1 класс</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="pupils:2-class" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>2 класс</span>
+									</div>
+								</label>
+
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_russian">РКИ (русский как иностранный)</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="russian:rki-level-3" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>Уровень 3</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="russian:rki-level-4" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>Уровень 4</span>
+									</div>
+								</label>
+
+								<div class="timetableSelect__subtitle timetableSelect__subtitle_baby">Мама и малыш</div>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="baby:3-4-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>3 - 4 года</span>
+									</div>
+								</label>
+
+								<label class="timetableSelect__option timetableSelectOption">
+									<input class="visually-hidden" type="checkbox" name="baby:4-5-age" data-element-input>
+									<div class="timetableSelectOption__button">
+										<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#done"></use></svg>
+										<span>4 - 5 лет</span>
+									</div>
+								</label>
+							</div>
+
+							<button class="timetableSelect__submit disabled" type="button" data-element-submit>Показать</button>
+						</div>
+					</div>
+
+					<label class="timetable__btnGroup timetableButton timetableButton_all">
+						<input class="visually-hidden js-timetable-group" type="checkbox" name="all" checked>
+						<span class="timetableButton__button">Все группы</span>
+					</label>
+
+					<div class="timetable__groups">
+						<label class="timetable__btnGroup timetableButton timetableButton_preschoolers">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="preschoolers">
+							<span class="timetableButton__button">Дошкольники</span>
+						</label>
+
+						<label class="timetable__btnGroup timetableButton timetableButton_pupils">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="pupils">
+							<span class="timetableButton__button">Школьники</span>
+						</label>
+
+						<label class="timetable__btnGroup timetableButton timetableButton_russian">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="russian">
+							<span class="timetableButton__button">РКИ (русский как иностранный)</span>
+						</label>
+
+						<label class="timetable__btnGroup timetableButton timetableButton_baby">
+							<input class="visually-hidden js-timetable-group" type="checkbox" name="baby">
+							<span class="timetableButton__button">Мама и малыш</span>
+						</label>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_preschoolers open js-timetable-block" data-group="preschoolers" data-class="3-4-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">3 - 4 года</div>
+						<div class="timetableBlock__title">Ландыш</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:35 – 16:20</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_yellow" data-title="Желтая комната">
+									<span>Желтая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">15:35 – 16:20</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Музыкально-речевое развитие</span>
+								</div>
+								<div class="timetableBlock__teacher" data-title="Марья Васильевна Петрова">
+									<span>Марья Васильевна Петрова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_music" data-title="Музыкальная комната">
+									<span>Музыкальная комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">16:00 – 16:40</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Логика</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Лена Вебер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_online">
+									<span>Онлайн</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_preschoolers js-timetable-block" data-group="preschoolers" data-class="4-5-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">4 - 5 лет</div>
+						<div class="timetableBlock__title">Ромашка</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Вт.</div>
+								<div class="timetableBlock__time">16:00 – 16:40</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Развитие речи</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Мария Кормилицына</span>
+									<span>Марина Кормилицына</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_lightblue" data-title="Голубая комната">
+									<span>Голубая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">16:40 – 17:25</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_yellow" data-title="Желтая комната">
+									<span>Желтая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__time">17:25 – 17:55</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Музыка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Марианна Дирнхофер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_music" data-title="Музыкальная комната">
+									<span>Музыкальная комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_pupils js-timetable-block" data-group="pupils" data-class="1-class">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">1 класс</div>
+						<div class="timetableBlock__title">Пасенка</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пт.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room" data-index="F" data-title="F комната">
+									<span>F комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+
+						<hr>
+
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Сб.</div>
+								<div class="timetableBlock__time">15:35 – 16:20</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Логика</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Лена Ломова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_online">
+									<span>Онлайн</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_pupils js-timetable-block" data-group="pupils" data-class="2-class">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">2 класс</div>
+						<div class="timetableBlock__title">Цыплята</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room" data-index="D" data-title="D комната">
+									<span>D комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_russian js-timetable-block" data-group="russian" data-class="rki-level-3">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">РКИ Уровень 3</div>
+						<div class="timetableBlock__title">Мячик</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Русский язык как иностранный</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Олеся Соммер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_orange" data-title="Оранжевая комната">
+									<span>Оранжевая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>St.-Pauls-Platz 8</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_russian js-timetable-block" data-group="russian" data-class="rki-level-4">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">РКИ Уровень 4</div>
+						<div class="timetableBlock__title">Кораблик</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Русский язык как иностранный</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Олеся Соммер</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_orange" data-title="Оранжевая комната">
+									<span>Оранжевая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>St.-Pauls-Platz 8</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="timetable__block timetableBlock timetableBlock_baby js-timetable-block" data-group="baby" data-class="3-4-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">3 - 4 года</div>
+						<div class="timetableBlock__title">Название группы</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_green" data-title="Зеленая комната">
+									<span>Зеленая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="timetable__block timetableBlock timetableBlock_baby js-timetable-block" data-group="baby" data-class="4-5-age">
+					<button class="timetableBlock__button" type="button" data-element-button>
+						<div class="timetableBlock__group">4 - 5 лет</div>
+						<div class="timetableBlock__title">Название группы</div>
+						<svg width="24" height="24"><use xlink:href="/icons/sprite.svg#arrow"></use></svg>
+					</button>
+
+					<div class="timetableBlock__content" data-element-content>
+						<div class="timetableBlock__line">
+							<div class="timetableBlock__date">
+								<div class="timetableBlock__day">Пн.</div>
+								<div class="timetableBlock__time">15:05 – 15:35</div>
+							</div>
+
+							<div class="timetableBlock__info">
+								<div class="timetableBlock__lesson">
+									<span>Рисование и лепка</span>
+								</div>
+								<div class="timetableBlock__teacher">
+									<span>Оля Любимова</span>
+								</div>
+								<div class="timetableBlock__room timetableBlock__room_green" data-title="Зеленая комната">
+									<span>Зеленая комната</span>
+								</div>
+								<div class="timetableBlock__location">
+									<span>Schwanthalerstr. 82</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<!-- JQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="script.js"></script>
+</body>
+</html>
