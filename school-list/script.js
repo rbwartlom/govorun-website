@@ -1,3 +1,22 @@
+const fixed = function() {
+	if (!document.body.classList.contains('disable-scroll')) {
+		let pagePosition = window.scrollY;
+		document.body.classList.add('disable-scroll');
+		document.body.dataset.position = pagePosition;
+		document.body.style.top = -pagePosition + 'px';
+	}
+}
+
+const unfixed = function() {
+	if (document.body.classList.contains('disable-scroll')) {
+		let pagePosition = parseInt(document.body.dataset.position, 10);
+		document.body.style.top = 'auto';
+		document.body.classList.remove('disable-scroll');
+		window.scroll({ top: pagePosition, left: 0 });
+		document.body.removeAttribute('data-position');
+	}
+}
+
 const initTimetableTabs = function(btn, elem) {
 	const buttons = $(btn);
 	const elements = $(elem);
@@ -112,19 +131,25 @@ const initCheckboxes = function(checkboxes, params = {}) {
 const initSelect = function(select, params = {}) {
 	const toggle = select.find('[data-element-toggle]');
 	const close = select.find('[data-element-close]');
+	const back = select.find('[data-element-back]');
 	const popup = select.find('[data-element-popup]');
 	const inputs = select.find('[data-element-input]');
 	const submit = select.find('[data-element-submit]');
 
 	const openPopup = function() {
 		inputs.prop('checked', false);
+		submit.addClass('disabled');
 		select.addClass('open');
+		back.fadeIn(200);
 		popup.slideDown(200);
+		window.innerWidth < 768 && fixed();
 	}
 
 	const closePopup = function() {
 		select.removeClass('open');
+		back.fadeOut(200);
 		popup.slideUp(200);
+		unfixed();
 	}
 
 	toggle.on('click', function() {
@@ -137,7 +162,6 @@ const initSelect = function(select, params = {}) {
 
 	close.on('click', function() {
 		closePopup();
-		submit.addClass('disabled');
 	});
 
 	inputs.on('change', function() {
@@ -147,7 +171,6 @@ const initSelect = function(select, params = {}) {
 	submit.on('click', function() {
 		if (submit.hasClass('disabled') || !params.onSubmit) return false;
 		closePopup();
-		submit.addClass('disabled');
 		params.onSubmit(inputs.filter(':checked'));
 	});
 }
@@ -192,9 +215,12 @@ const initCloseOpenedSelects = function(className) {
 
 		if (!item.hasClass(className) && !item.parents('.' + className)[0]) {
 			const select = $('.' + className+'.open');
+			const back = select.find('[data-element-back]');
 			const popup = select.find('[data-element-popup]');
 			select.removeClass('open');
+			back.fadeOut(200);
 			popup.slideUp(200);
+			unfixed();
 		}
 	});
 }

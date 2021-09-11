@@ -1,38 +1,41 @@
 :root {
-  --color-dark: #1B4D84;
-  --color-light: #E74125;
-  --color-light-hover: #C83016;
-
-  --color-group-all: #1B4D84;
-	--color-group-preschoolers: #547F80;
-	--color-group-pupils: #054E65;
-	--color-group-russian: #F89D00;
-	--color-group-baby: #EE7965;
-
-	--color-mark: #BDCBD4;
-	--color-music: #ECD8D7;
-	--color-yellow: #FFDF39;
-	--color-lightblue: #8DC8F6;
-	--color-orange: #FFB560;
-	--color-green: #7FBD86;
-	--color-blue: #085FA9;
+	--color-dark: #1b4d84;
+	--color-light: #e74125;
+	--color-light-hover: #c83016;
+	--color-group-all: #1b4d84;
+	--color-group-preschoolers: #547f80;
+	--color-group-pupils: #054e65;
+	--color-group-russian: #f89d00;
+	--color-group-baby: #ee7965;
+	--color-mark: #bdcbd4;
+	--color-music: #ecd8d7;
+	--color-yellow: #ffdf39;
+	--color-lightblue: #8dc8f6;
+	--color-orange: #ffb560;
+	--color-green: #7fbd86;
+	--color-blue: #085fa9;
 }
-
+.disable-scroll {
+	overflow: hidden;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
 .visually-hidden {
-	position: absolute!important;
+	position: absolute !important;
 	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px,1px,1px,1px);
-	padding: 0!important;
-	border: 0!important;
-	height: 1px!important;
-	width: 1px!important;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
 	overflow: hidden;
 }
-
 [data-title] {
 	position: relative;
 }
-
 [data-title]::after {
 	background: rgba(255, 255, 255, 0.8);
 	content: attr(data-title);
@@ -46,32 +49,27 @@
 	bottom: calc(100% + 4px);
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity .2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
 }
-
 [data-title]:hover::after {
 	visibility: visible;
 	opacity: 1;
 }
-
 .timetable {
 	margin-bottom: 120px;
 }
-
 .timetable__title {
 	margin-bottom: 48px;
 	font-size: 34px;
 	line-height: 1.2;
 	font-weight: 400;
 }
-
 .timetable__tabs {
 	position: relative;
 	padding-bottom: 20px;
 	display: flex;
 	flex-wrap: wrap;
 }
-
 .timetable__tabBtn {
 	font-size: 16px;
 	line-height: 1.25;
@@ -79,134 +77,109 @@
 	color: #212121;
 	padding: 14px 34px;
 	background-color: #fff;
-	border: 1px solid #D4D4D4;
+	border: 1px solid #d4d4d4;
 	border-bottom: none;
 	cursor: pointer;
 	border-radius: 8px 8px 0 0;
-	transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-
 .timetable__tabBtn::after {
-	content: '';
+	content: "";
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
 	height: 20px;
-	transition: background-color .2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 }
-
 .timetable__tabBtn.active {
 	color: #fff;
 	cursor: default;
 }
-
 .timetable__tabBtn_dark.active {
 	background-color: var(--color-dark);
 	border-color: var(--color-dark);
 }
-
 .timetable__tabBtn_dark.active::after {
 	background-color: var(--color-dark);
 }
-
 .timetable__tabBtn_dark:not(.active):hover {
 	color: var(--color-dark);
 }
-
 .timetable__tabBtn_light.active {
 	background-color: var(--color-light);
 	border-color: var(--color-light);
 }
-
 .timetable__tabBtn_light.active::after {
 	background-color: var(--color-light);
 }
-
 .timetable__tabBtn_light:not(.active):hover {
 	color: var(--color-light);
 }
-
 .timetable__tabElement {
 	display: none;
 	padding-top: 28px;
 }
-
 .timetable__tabElement.active {
 	display: block;
 }
-
 .timetable__controls {
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 28px;
 }
-
 .timetable__select {
 	margin: 0 12px 20px 0;
 	flex-grow: 1;
 }
-
 .timetable__btnGroup {
 	margin: 0 12px 20px 0;
 	flex-grow: 1;
 }
-
 .timetable__btnGroup:last-child {
 	margin-right: 0;
 }
-
 .timetable__groups {
 	display: flex;
 	flex-grow: 1;
 }
-
 .timetable__block {
 	position: relative;
 	margin-bottom: 1px;
 }
-
-
-
 .timetableSelect {
 	position: relative;
 }
-
 .timetableSelect.open .timetableSelect__button svg {
 	transform: translate(50%, -50%) rotate(90deg) scale(-1, 1);
 }
-
 .timetableSelect.open .timetableSelect__popup {
 	opacity: 1;
 }
-
 .timetableSelect__button {
 	width: 100%;
 	cursor: pointer;
 	position: relative;
 	color: #212121;
 	font-size: 14px;
-	background: none;
+	background: 0 0;
 	text-align: left;
 	border-radius: 4px;
-	border: 1px solid #D4D4D4;
+	border: 1px solid #d4d4d4;
 	padding: 10px 80px 10px 24px;
 }
-
 .timetableSelect__button svg {
 	position: absolute;
 	top: 50%;
 	right: 32px;
-	padding: 5px;
-	color: #B8B8B8;
+	padding: 6px;
+	color: #b8b8b8;
 	transform: translate(50%, -50%) rotate(90deg);
-	transition: transform .2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 }
-
 .timetableSelect__back {
 	display: none;
 }
-
 .timetableSelect__popup {
 	display: none;
 	overflow: hidden;
@@ -219,49 +192,56 @@
 	right: 0;
 	left: 0;
 	opacity: 0;
-	transition: opacity .2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
 }
-
 .timetableSelect__title {
 	display: none;
 	position: relative;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 15px 48px 15px 12px;
+	background-color: var(--color-light);
 }
-
 .timetableSelect__close {
 	position: absolute;
+	top: 50%;
+	right: 24px;
+	transform: translate(50%, -50%);
+	background: 0 0;
+	border: none;
+	padding: 0;
+	color: #fff;
 }
-
+.timetableSelect__close svg {
+	display: block;
+	padding: 5px;
+}
 .timetableSelect__list {
 	position: relative;
 	overflow: auto;
 }
-
 .timetableSelect__subtitle {
 	color: #fff;
 	padding: 9px 12px;
 	font-size: 13px;
 }
-
 .timetableSelect__subtitle_preschoolers {
 	background-color: var(--color-group-preschoolers);
 }
-
 .timetableSelect__subtitle_pupils {
 	background-color: var(--color-group-pupils);
 }
-
 .timetableSelect__subtitle_baby {
 	background-color: var(--color-group-baby);
 }
-
 .timetableSelect__subtitle_russian {
 	background-color: var(--color-group-russian);
 }
-
 .timetableSelect__option {
 	position: relative;
 }
-
 .timetableSelect__submit {
 	display: block;
 	text-align: center;
@@ -273,65 +253,50 @@
 	color: #fff;
 	margin-top: 10px;
 	margin: 12px 12px 16px;
-	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
-
 .timetableSelect__submit.disabled {
 	background-color: #fff;
 	color: var(--color-light);
 }
-
 .timetableSelect__submit:not(.disabled):hover {
 	cursor: pointer;
 	border: 1px solid var(--color-light-hover);
 	background-color: var(--color-light-hover);
 }
-
-
-
 .timetableSelectOption {
 	position: relative;
 }
-
 .timetableSelectOption input:checked + .timetableSelectOption__button {
 	background-color: rgba(29, 76, 127, 0.12);
 }
-
 .timetableSelectOption input:checked + .timetableSelectOption__button svg {
-	color: #1D4C7F;
+	color: #1d4c7f;
 }
-
 .timetableSelectOption__button {
 	position: relative;
 	padding: 11px 24px 11px 48px;
 	font-size: 13px;
 	color: #212121;
-	transition: background-color .2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 }
-
 .timetableSelectOption__button svg {
 	position: absolute;
 	top: 50%;
 	left: 24px;
 	transform: translate(-50%, -50%);
 	color: transparent;
-	transition: color .2s ease-in-out;
+	transition: color 0.2s ease-in-out;
 }
-
 .timetableSelectOption__button:hover {
 	background-color: rgba(29, 76, 127, 0.03);
 }
-
 .timetableSelectOption__button:hover svg {
-	color: #B8B8B8;
+	color: #b8b8b8;
 }
-
-
-
 .timetableButton {
 	position: relative;
 }
-
 .timetableButton__button {
 	white-space: nowrap;
 	text-align: center;
@@ -341,86 +306,68 @@
 	padding: 10px 20px;
 	border: 1px solid;
 	font-size: 14px;
-	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
-
 .timetableButton input:checked + .timetableButton__button,
 .timetableButton:hover .timetableButton__button {
 	color: #fff;
 }
-
 .timetableButton_all .timetableButton__button {
 	color: var(--color-group-all);
 	border-color: var(--color-group-all);
 }
-
 .timetableButton_all input:checked + .timetableButton__button,
 .timetableButton_all:hover .timetableButton__button {
 	background-color: var(--color-group-all);
 }
-
 .timetableButton_preschoolers .timetableButton__button {
 	color: var(--color-group-preschoolers);
 	border-color: var(--color-group-preschoolers);
 }
-
 .timetableButton_preschoolers input:checked + .timetableButton__button,
 .timetableButton_preschoolers:hover .timetableButton__button {
 	background-color: var(--color-group-preschoolers);
 }
-
 .timetableButton_pupils .timetableButton__button {
 	color: var(--color-group-pupils);
 	border-color: var(--color-group-pupils);
 }
-
 .timetableButton_pupils input:checked + .timetableButton__button,
 .timetableButton_pupils:hover .timetableButton__button {
 	background-color: var(--color-group-pupils);
 }
-
 .timetableButton_russian .timetableButton__button {
 	color: var(--color-group-russian);
 	border-color: var(--color-group-russian);
 }
-
 .timetableButton_russian input:checked + .timetableButton__button,
 .timetableButton_russian:hover .timetableButton__button {
 	background-color: var(--color-group-russian);
 }
-
 .timetableButton_baby .timetableButton__button {
 	color: var(--color-group-baby);
 	border-color: var(--color-group-baby);
 }
-
 .timetableButton_baby input:checked + .timetableButton__button,
 .timetableButton_baby:hover .timetableButton__button {
 	background-color: var(--color-group-baby);
 }
-
-
-
 .timetableBlock {
 	position: relative;
 }
-
 .timetableBlock.hide,
-.timetableBlock.hideGroup,
-.timetableBlock.hideClass {
+.timetableBlock.hideClass,
+.timetableBlock.hideGroup {
 	display: none;
 }
-
 .timetableBlock.open .timetableBlock__button svg {
 	transform: rotate(90deg) translate(-50%, -50%) scale(-1, 1);
 }
-
 .timetableBlock.close .timetableBlock__content {
 	opacity: 0;
 }
-
 .timetableBlock::before {
-	content: '';
+	content: "";
 	opacity: 0.1;
 	position: absolute;
 	bottom: 0;
@@ -428,32 +375,31 @@
 	left: 0;
 	top: 0;
 }
-
-.timetableBlock_preschoolers::before,
-.timetableBlock_preschoolers .timetableBlock__button {
+.timetableBlock_preschoolers .timetableBlock__button,
+.timetableBlock_preschoolers .timetableBlock__date::after,
+.timetableBlock_preschoolers::before {
 	background-color: var(--color-group-preschoolers);
 }
-
-.timetableBlock_pupils::before,
-.timetableBlock_pupils .timetableBlock__button {
+.timetableBlock_pupils .timetableBlock__button,
+.timetableBlock_pupils .timetableBlock__date::after,
+.timetableBlock_pupils::before {
 	background-color: var(--color-group-pupils);
 }
-
-.timetableBlock_russian::before,
-.timetableBlock_russian .timetableBlock__button {
+.timetableBlock_russian .timetableBlock__button,
+.timetableBlock_russian .timetableBlock__date::after,
+.timetableBlock_russian::before {
 	background-color: var(--color-group-russian);
 }
-
-.timetableBlock_baby::before,
-.timetableBlock_baby .timetableBlock__button {
+.timetableBlock_baby .timetableBlock__button,
+.timetableBlock_baby .timetableBlock__date::after,
+.timetableBlock_baby::before {
 	background-color: var(--color-group-baby);
 }
-
 .timetableBlock__button {
 	cursor: pointer;
 	width: 100%;
 	display: flex;
-	background: transparent;
+	background: 0 0;
 	padding: 20px 60px 20px 24px;
 	color: #fff;
 	border: none;
@@ -462,43 +408,36 @@
 	font-size: 22px;
 	font-weight: 500;
 }
-
 .timetableBlock__button svg {
 	position: absolute;
 	padding: 4px;
 	top: 50%;
 	right: 34px;
 	transform: rotate(90deg) translate(-50%, -50%);
-	transition: transform .2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 }
-
 .timetableBlock__group {
 	margin-right: 24px;
 }
-
 .timetableBlock__title {
 	text-transform: uppercase;
 }
-
 .timetableBlock__content {
 	padding: 24px;
 	position: relative;
 	z-index: 1;
-	transition: opacity .2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
 }
-
 .timetableBlock__content hr {
-	background-color: #D4D4D4;
+	background-color: #d4d4d4;
 	border: 0 none;
-	color: #D4D4D4;
+	color: #d4d4d4;
 	height: 1px;
 	margin: 24px 0;
 }
-
 .timetableBlock__content hr:last-child {
 	margin-bottom: 0;
 }
-
 .timetableBlock__line {
 	display: flex;
 	align-items: flex-start;
@@ -507,18 +446,15 @@
 	font-size: 18px;
 	line-height: 24px;
 }
-
 .timetableBlock__line:last-child {
 	margin-bottom: 0;
 }
-
 .timetableBlock__date {
 	display: flex;
 	align-items: flex-start;
 	width: 20%;
 	justify-content: flex-end;
 }
-
 .timetableBlock__day {
 	margin: 0 14px;
 	width: calc(33.33333% - 28px);
@@ -527,80 +463,68 @@
 	text-transform: uppercase;
 	font-weight: 500;
 }
-
 .timetableBlock__time {
 	margin: 0 14px;
 	width: calc(66.66666% - 28px);
 }
-
 .timetableBlock__info {
 	display: flex;
 	align-items: flex-start;
 	width: 80%;
 }
-
 .timetableBlock__lesson {
 	margin: 0 14px;
 	width: calc(38% - 28px);
 	position: relative;
 }
-
 .timetableBlock__lesson span {
 	display: block;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
 }
-
 .timetableBlock__teacher {
 	margin: 0 14px;
 	width: calc(27% - 28px);
 	display: flex;
 }
-
-.timetableBlock__teacher span,
-.timetableBlock__teacher a {
+.timetableBlock__teacher a,
+.timetableBlock__teacher span {
 	display: block;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
 	margin-bottom: 8px;
 }
-
-.timetableBlock__teacher span:last-child,
-.timetableBlock__teacher a:last-child {
+.timetableBlock__teacher a:last-child,
+.timetableBlock__teacher span:last-child {
 	margin-bottom: 0;
 }
-
 .timetableBlock__teacher a {
 	color: var(--color-light-hover);
 	text-decoration: none;
 	position: relative;
 }
-
 .timetableBlock__teacher a::before {
-	content: '';
+	content: "";
 	height: 1px;
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	transition: background-color .2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 }
-
 .timetableBlock__teacher a:hover::before {
 	background-color: var(--color-light-hover);
 }
-
 .timetableBlock__room {
 	display: flex;
 	align-items: center;
 	flex: 1;
 	margin: 0 14px;
 }
-
 .timetableBlock__room::before {
-	content: '';
+	content: "";
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -612,82 +536,332 @@
 	border-radius: 50%;
 	background-color: var(--color-mark);
 }
-
 .timetableBlock__room[data-index]::before {
 	content: attr(data-index);
 }
-
 .timetableBlock__room span {
 	display: none;
 }
-
 .timetableBlock__room_online::before {
+	background-color: var(--color-light);
 	display: none;
 }
-
 .timetableBlock__room_online span {
 	display: block;
 	color: var(--color-light);
 }
-
 .timetableBlock__room_music::before {
 	background-color: var(--color-music);
-	background-image: url(/icons/music.svg);
+	background-image: url(icons/music.svg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 50%;
 }
-
 .timetableBlock__room_yellow::before {
 	background-color: var(--color-yellow);
 }
-
 .timetableBlock__room_lightblue::before {
 	background-color: var(--color-lightblue);
 }
-
 .timetableBlock__room_blue::before {
 	background-color: var(--color-blue);
 }
-
 .timetableBlock__room_orange::before {
 	background-color: var(--color-orange);
 }
-
 .timetableBlock__room_green::before {
 	background-color: var(--color-green);
 }
-
 .timetableBlock__location {
 	margin: 0 14px;
 	width: calc(25% - 28px);
 	display: flex;
 }
-
-.timetableBlock__location span,
-.timetableBlock__location a {
+.timetableBlock__location a,
+.timetableBlock__location span {
 	display: block;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
 }
-
 .timetableBlock__location a {
 	color: var(--color-light-hover);
 	text-decoration: none;
 	position: relative;
 }
-
 .timetableBlock__location a::before {
-	content: '';
+	content: "";
 	height: 1px;
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	transition: background-color .2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
 }
-
 .timetableBlock__location a:hover::before {
 	background-color: var(--color-light-hover);
+}
+@media screen and (max-width: 1199px) {
+	[data-title]::after {
+		display: none;
+	}
+	.timetable__title {
+		font-size: 28px;
+	}
+	.timetable__btnGroup,
+	.timetable__select {
+		flex-grow: 0;
+		margin-right: 10px;
+	}
+	.timetable__groups {
+		width: 100%;
+	}
+	.timetable__block {
+		margin-bottom: 20px;
+	}
+	.timetable__block:last-child {
+		margin-bottom: 0;
+	}
+	.timetableButton__button {
+		padding: 10px 16px;
+	}
+	.timetableBlock {
+		transition: box-shadow 0.2s ease-in-out;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+	.timetableBlock.open {
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+	}
+	.timetableBlock::before {
+		display: none;
+	}
+	.timetableBlock__button {
+		padding: 18px 16px;
+		font-size: 18px;
+	}
+	.timetableBlock__content {
+		padding: 24px 16px;
+	}
+	.timetableBlock__content hr {
+		margin: 28px 0;
+	}
+	.timetableBlock__line {
+		align-items: stretch;
+		margin-bottom: 28px;
+	}
+	.timetableBlock__date {
+		position: relative;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.timetableBlock__date::after {
+		border-radius: 1px;
+		width: 2px;
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		top: 0;
+	}
+	.timetableBlock__day {
+		width: calc(100% - 28px);
+		margin-bottom: 10px;
+	}
+	.timetableBlock__time {
+		width: calc(100% - 28px);
+		font-size: 14px;
+	}
+	.timetableBlock__info {
+		display: grid;
+		grid-template-columns: calc(55% - 14px) calc(45% - 14px);
+		grid-column-gap: 28px;
+		margin: 0 14px;
+		width: calc(80% - 28px);
+	}
+	.timetableBlock__lesson {
+		width: 100%;
+		margin: 0;
+		grid-row: 1/4;
+	}
+	.timetableBlock__lesson span {
+		white-space: normal;
+	}
+	.timetableBlock__location,
+	.timetableBlock__room,
+	.timetableBlock__teacher {
+		width: 100%;
+		margin: 10px 0 0;
+		color: #858585;
+		font-size: 16px;
+		display: flex;
+		align-items: center;
+	}
+	.timetableBlock__teacher {
+		margin-top: 0;
+	}
+	.timetableBlock__location::before,
+	.timetableBlock__teacher::before {
+		content: "";
+		display: block;
+		height: 16px;
+		width: 16px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		margin-right: 6px;
+	}
+	.timetableBlock__teacher::before {
+		background-image: url(icons/teacher.svg);
+	}
+	.timetableBlock__location::before {
+		background-image: url(icons/location.svg);
+	}
+	.timetableBlock__room {
+		order: 1;
+	}
+	.timetableBlock__room::before {
+		width: 12px;
+		height: 12px;
+		margin: 0 8px 0 2px;
+		font-size: 8px;
+	}
+	.timetableBlock__room span {
+		display: block;
+	}
+	.timetableBlock__room_online::before {
+		display: block;
+	}
+}
+@media screen and (max-width: 991px) {
+	.timetable__groups .timetable__btnGroup {
+		flex-grow: 1;
+	}
+}
+@media screen and (max-width: 767px) {
+	.timetable__title {
+		font-size: 20px;
+		margin-bottom: 28px;
+	}
+	.timetable__tabs {
+		padding-bottom: 10px;
+	}
+	.timetable__tabBtn {
+		font-size: 12px;
+		padding: 8px 22px;
+	}
+	.timetable__tabBtn::after {
+		height: 10px;
+	}
+	.timetable__tabElement {
+		padding-top: 12px;
+	}
+	.timetable__controls {
+		margin-bottom: 24px;
+	}
+	.timetable__btnGroup,
+	.timetable__select {
+		margin-bottom: 12px;
+	}
+	.timetable__groups {
+		overflow: auto;
+		padding: 0 14px;
+		margin: 0 -14px;
+	}
+	.timetable__block {
+		margin-bottom: 12px;
+	}
+	.timetableSelect__button {
+		font-size: 12px;
+		padding: 6px 38px 6px 12px;
+	}
+	.timetableSelect__button svg {
+		right: 19px;
+	}
+	.timetableSelect__back {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		top: 0;
+		z-index: 99;
+		background: rgba(0, 0, 0, 0.3);
+	}
+	.timetableSelect__popup {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 100;
+		height: calc(100% - 50px);
+		border-radius: 4px;
+		width: 260px;
+	}
+	.timetableSelect__list {
+		overflow: auto;
+		max-height: calc(100% - 113px);
+		margin-bottom: auto;
+	}
+	.timetableSelect__title {
+		display: block;
+	}
+	.timetableButton__button {
+		font-size: 12px;
+		padding: 6px 12px;
+	}
+	.timetableBlock__button {
+		padding: 10px 12px;
+		font-size: 12px;
+	}
+	.timetableBlock__button svg {
+		right: 24px;
+		padding: 5px;
+	}
+	.timetableBlock__content {
+		padding: 16px 12px;
+	}
+	.timetableBlock__line {
+		margin-bottom: 16px;
+		line-height: 1.5;
+	}
+	.timetableBlock__date {
+		width: 35%;
+	}
+	.timetableBlock__info {
+		width: calc(65% - 28px);
+		display: block;
+	}
+	.timetableBlock__day {
+		font-size: 12px;
+		margin-bottom: 4px;
+	}
+	.timetableBlock__time {
+		font-size: 10px;
+	}
+	.timetableBlock__lesson {
+		font-size: 14px;
+		margin-bottom: 12px;
+	}
+	.timetableBlock__location,
+	.timetableBlock__room,
+	.timetableBlock__teacher {
+		font-size: 12px;
+		margin-top: 8px;
+	}
+	.timetableBlock__location::before,
+	.timetableBlock__teacher::before {
+		width: 12px;
+		height: 12px;
+	}
+	.timetableBlock__room::before {
+		margin: 0 6px 0 0;
+	}
+}
+@media screen and (max-width: 380px) {
+	.timetable__tabBtn {
+		width: 50%;
+		padding: 8px;
+	}
 }
