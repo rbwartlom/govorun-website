@@ -1,0 +1,641 @@
+:root {
+  --color-dark: #1B4D84;
+  --color-light: #E74125;
+  --color-light-hover: #C83016;
+
+  --color-group-all: #1B4D84;
+	--color-group-preschoolers: #547F80;
+	--color-group-pupils: #054E65;
+	--color-group-russian: #F89D00;
+	--color-group-baby: #EE7965;
+
+	--color-mark: #BDCBD4;
+	--color-music: #ECD8D7;
+	--color-yellow: #FFDF39;
+	--color-lightblue: #8DC8F6;
+	--color-orange: #FFB560;
+	--color-green: #7FBD86;
+	--color-blue: #085FA9;
+}
+
+.visually-hidden {
+	position: absolute!important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px,1px,1px,1px);
+	padding: 0!important;
+	border: 0!important;
+	height: 1px!important;
+	width: 1px!important;
+	overflow: hidden;
+}
+
+[data-title] {
+	position: relative;
+}
+
+[data-title]::after {
+	background: rgba(255, 255, 255, 0.8);
+	content: attr(data-title);
+	white-space: nowrap;
+	position: absolute;
+	color: #212121;
+	font-size: 12px;
+	padding: 4px;
+	z-index: 1;
+	left: 0;
+	bottom: calc(100% + 4px);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .2s ease-in-out;
+}
+
+[data-title]:hover::after {
+	visibility: visible;
+	opacity: 1;
+}
+
+.timetable {
+	margin-bottom: 120px;
+}
+
+.timetable__title {
+	margin-bottom: 48px;
+	font-size: 34px;
+	line-height: 1.2;
+	font-weight: 400;
+}
+
+.timetable__tabs {
+	position: relative;
+	padding-bottom: 20px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.timetable__tabBtn {
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 500;
+	color: #212121;
+	padding: 14px 34px;
+	background-color: #fff;
+	border: 1px solid #D4D4D4;
+	border-bottom: none;
+	cursor: pointer;
+	border-radius: 8px 8px 0 0;
+	transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+.timetable__tabBtn::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 20px;
+	transition: background-color .2s ease-in-out;
+}
+
+.timetable__tabBtn.active {
+	color: #fff;
+	cursor: default;
+}
+
+.timetable__tabBtn_dark.active {
+	background-color: var(--color-dark);
+	border-color: var(--color-dark);
+}
+
+.timetable__tabBtn_dark.active::after {
+	background-color: var(--color-dark);
+}
+
+.timetable__tabBtn_dark:not(.active):hover {
+	color: var(--color-dark);
+}
+
+.timetable__tabBtn_light.active {
+	background-color: var(--color-light);
+	border-color: var(--color-light);
+}
+
+.timetable__tabBtn_light.active::after {
+	background-color: var(--color-light);
+}
+
+.timetable__tabBtn_light:not(.active):hover {
+	color: var(--color-light);
+}
+
+.timetable__tabElement {
+	display: none;
+	padding-top: 28px;
+}
+
+.timetable__tabElement.active {
+	display: block;
+}
+
+.timetable__controls {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 28px;
+}
+
+.timetable__select {
+	margin: 0 12px 20px 0;
+	flex-grow: 1;
+}
+
+.timetable__btnGroup {
+	margin: 0 12px 20px 0;
+	flex-grow: 1;
+}
+
+.timetable__btnGroup:last-child {
+	margin-right: 0;
+}
+
+.timetable__groups {
+	display: flex;
+	flex-grow: 1;
+}
+
+.timetable__block {
+	position: relative;
+	margin-bottom: 1px;
+}
+
+
+
+.timetableSelect {
+	position: relative;
+}
+
+.timetableSelect.open .timetableSelect__button svg {
+	transform: translate(50%, -50%) rotate(90deg) scale(-1, 1);
+}
+
+.timetableSelect.open .timetableSelect__popup {
+	opacity: 1;
+}
+
+.timetableSelect__button {
+	width: 100%;
+	cursor: pointer;
+	position: relative;
+	color: #212121;
+	font-size: 14px;
+	background: none;
+	text-align: left;
+	border-radius: 4px;
+	border: 1px solid #D4D4D4;
+	padding: 10px 80px 10px 24px;
+}
+
+.timetableSelect__button svg {
+	position: absolute;
+	top: 50%;
+	right: 32px;
+	padding: 5px;
+	color: #B8B8B8;
+	transform: translate(50%, -50%) rotate(90deg);
+	transition: transform .2s ease-in-out;
+}
+
+.timetableSelect__back {
+	display: none;
+}
+
+.timetableSelect__popup {
+	display: none;
+	overflow: hidden;
+	background-color: #fff;
+	box-shadow: 0 3px 5px rgba(9, 30, 66, 0.2);
+	border-radius: 4px;
+	position: absolute;
+	z-index: 5;
+	top: 100%;
+	right: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity .2s ease-in-out;
+}
+
+.timetableSelect__title {
+	display: none;
+	position: relative;
+}
+
+.timetableSelect__close {
+	position: absolute;
+}
+
+.timetableSelect__list {
+	position: relative;
+	overflow: auto;
+}
+
+.timetableSelect__subtitle {
+	color: #fff;
+	padding: 9px 12px;
+	font-size: 13px;
+}
+
+.timetableSelect__subtitle_preschoolers {
+	background-color: var(--color-group-preschoolers);
+}
+
+.timetableSelect__subtitle_pupils {
+	background-color: var(--color-group-pupils);
+}
+
+.timetableSelect__subtitle_baby {
+	background-color: var(--color-group-baby);
+}
+
+.timetableSelect__subtitle_russian {
+	background-color: var(--color-group-russian);
+}
+
+.timetableSelect__option {
+	position: relative;
+}
+
+.timetableSelect__submit {
+	display: block;
+	text-align: center;
+	padding: 10px 24px;
+	width: calc(100% - 24px);
+	border-radius: 4px;
+	border: 1px solid var(--color-light);
+	background-color: var(--color-light);
+	color: #fff;
+	margin-top: 10px;
+	margin: 12px 12px 16px;
+	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+}
+
+.timetableSelect__submit.disabled {
+	background-color: #fff;
+	color: var(--color-light);
+}
+
+.timetableSelect__submit:not(.disabled):hover {
+	cursor: pointer;
+	border: 1px solid var(--color-light-hover);
+	background-color: var(--color-light-hover);
+}
+
+
+
+.timetableSelectOption {
+	position: relative;
+}
+
+.timetableSelectOption input:checked + .timetableSelectOption__button {
+	background-color: rgba(29, 76, 127, 0.12);
+}
+
+.timetableSelectOption input:checked + .timetableSelectOption__button svg {
+	color: #1D4C7F;
+}
+
+.timetableSelectOption__button {
+	position: relative;
+	padding: 11px 24px 11px 48px;
+	font-size: 13px;
+	color: #212121;
+	transition: background-color .2s ease-in-out;
+}
+
+.timetableSelectOption__button svg {
+	position: absolute;
+	top: 50%;
+	left: 24px;
+	transform: translate(-50%, -50%);
+	color: transparent;
+	transition: color .2s ease-in-out;
+}
+
+.timetableSelectOption__button:hover {
+	background-color: rgba(29, 76, 127, 0.03);
+}
+
+.timetableSelectOption__button:hover svg {
+	color: #B8B8B8;
+}
+
+
+
+.timetableButton {
+	position: relative;
+}
+
+.timetableButton__button {
+	white-space: nowrap;
+	text-align: center;
+	display: block;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 10px 20px;
+	border: 1px solid;
+	font-size: 14px;
+	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+}
+
+.timetableButton input:checked + .timetableButton__button {
+	color: #fff;
+}
+
+.timetableButton_all .timetableButton__button {
+	color: var(--color-group-all);
+	border-color: var(--color-group-all);
+}
+
+.timetableButton_all input:checked + .timetableButton__button {
+	background-color: var(--color-group-all);
+}
+
+.timetableButton_preschoolers .timetableButton__button {
+	color: var(--color-group-preschoolers);
+	border-color: var(--color-group-preschoolers);
+}
+
+.timetableButton_preschoolers input:checked + .timetableButton__button {
+	background-color: var(--color-group-preschoolers);
+}
+
+.timetableButton_pupils .timetableButton__button {
+	color: var(--color-group-pupils);
+	border-color: var(--color-group-pupils);
+}
+
+.timetableButton_pupils input:checked + .timetableButton__button {
+	background-color: var(--color-group-pupils);
+}
+
+.timetableButton_russian .timetableButton__button {
+	color: var(--color-group-russian);
+	border-color: var(--color-group-russian);
+}
+
+.timetableButton_russian input:checked + .timetableButton__button {
+	background-color: var(--color-group-russian);
+}
+
+.timetableButton_baby .timetableButton__button {
+	color: var(--color-group-baby);
+	border-color: var(--color-group-baby);
+}
+
+.timetableButton_baby input:checked + .timetableButton__button {
+	background-color: var(--color-group-baby);
+}
+
+
+
+.timetableBlock {
+	position: relative;
+}
+
+.timetableBlock.hideGroup,
+.timetableBlock.hideClass {
+	display: none;
+}
+
+.timetableBlock.open .timetableBlock__button svg {
+	transform: rotate(90deg) translate(-50%, -50%) scale(-1, 1);
+}
+
+.timetableBlock.close .timetableBlock__content {
+	opacity: 0;
+}
+
+.timetableBlock::before {
+	content: '';
+	opacity: 0.1;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	top: 0;
+}
+
+.timetableBlock_preschoolers::before,
+.timetableBlock_preschoolers .timetableBlock__button {
+	background-color: var(--color-group-preschoolers);
+}
+
+.timetableBlock_pupils::before,
+.timetableBlock_pupils .timetableBlock__button {
+	background-color: var(--color-group-pupils);
+}
+
+.timetableBlock_russian::before,
+.timetableBlock_russian .timetableBlock__button {
+	background-color: var(--color-group-russian);
+}
+
+.timetableBlock_baby::before,
+.timetableBlock_baby .timetableBlock__button {
+	background-color: var(--color-group-baby);
+}
+
+.timetableBlock__button {
+	cursor: pointer;
+	width: 100%;
+	display: flex;
+	background: transparent;
+	padding: 20px 60px 20px 24px;
+	color: #fff;
+	border: none;
+	position: relative;
+	z-index: 1;
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.timetableBlock__button svg {
+	position: absolute;
+	padding: 4px;
+	top: 50%;
+	right: 34px;
+	transform: rotate(90deg) translate(-50%, -50%);
+	transition: transform .2s ease-in-out;
+}
+
+.timetableBlock__group {
+	margin-right: 24px;
+}
+
+.timetableBlock__title {
+	text-transform: uppercase;
+}
+
+.timetableBlock__content {
+	padding: 24px;
+	position: relative;
+	z-index: 1;
+	transition: opacity .2s ease-in-out;
+}
+
+.timetableBlock__content hr {
+	background-color: #D4D4D4;
+	border: 0 none;
+	color: #D4D4D4;
+	height: 1px;
+	margin: 24px 0;
+}
+
+.timetableBlock__content hr:last-child {
+	margin-bottom: 0;
+}
+
+.timetableBlock__line {
+	display: flex;
+	align-items: flex-start;
+	margin: 0 -14px 14px;
+	color: #212121;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.timetableBlock__line:last-child {
+	margin-bottom: 0;
+}
+
+.timetableBlock__date {
+	display: flex;
+	align-items: flex-start;
+	width: 20%;
+	justify-content: flex-end;
+}
+
+.timetableBlock__day {
+	margin: 0 14px;
+	width: calc(33.33333% - 28px);
+	font-size: 22px;
+	line-height: 1;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.timetableBlock__time {
+	margin: 0 14px;
+	width: calc(66.66666% - 28px);
+}
+
+.timetableBlock__info {
+	display: flex;
+	align-items: flex-start;
+	width: 80%;
+}
+
+.timetableBlock__lesson {
+	margin: 0 14px;
+	width: calc(38% - 28px);
+	position: relative;
+}
+
+.timetableBlock__lesson span {
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.timetableBlock__teacher {
+	margin: 0 14px;
+	width: calc(27% - 28px);
+}
+
+.timetableBlock__teacher span {
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-bottom: 8px;
+}
+
+.timetableBlock__teacher span:last-child {
+	margin-bottom: 0;
+}
+
+.timetableBlock__room {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	margin: 0 14px;
+}
+
+.timetableBlock__room::before {
+	content: '';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	font-weight: 500;
+	color: #212121;
+	height: 24px;
+	width: 24px;
+	border-radius: 50%;
+	background-color: var(--color-mark);
+}
+
+.timetableBlock__room[data-index]::before {
+	content: attr(data-index);
+}
+
+.timetableBlock__room span {
+	display: none;
+}
+
+.timetableBlock__room_online::before {
+	display: none;
+}
+
+.timetableBlock__room_online span {
+	display: block;
+	color: var(--color-light);
+}
+
+.timetableBlock__room_music::before {
+	background-color: var(--color-music);
+	background-image: url(/icons/music.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+}
+
+.timetableBlock__room_yellow::before {
+	background-color: var(--color-yellow);
+}
+
+.timetableBlock__room_lightblue::before {
+	background-color: var(--color-lightblue);
+}
+
+.timetableBlock__room_blue::before {
+	background-color: var(--color-blue);
+}
+
+.timetableBlock__room_orange::before {
+	background-color: var(--color-orange);
+}
+
+.timetableBlock__room_green::before {
+	background-color: var(--color-green);
+}
+
+.timetableBlock__location {
+	margin: 0 14px;
+	width: calc(25% - 28px);
+}
+
+.timetableBlock__location span {
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
