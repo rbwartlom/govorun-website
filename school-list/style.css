@@ -1,4 +1,4 @@
-:root{--color-dark:#1b4d84;--color-light:#e74125;--color-light-hover:#c83016;--color-group-all:#1b4d84;--color-group-preschoolers:#547f80;--color-group-pupils:#054e65;--color-group-russian:#f89d00;--color-group-baby:#ee7965;--color-mark:#bdcbd4;--color-music:#ecd8d7;--color-yellow:#ffdf39;--color-lightblue:#8dc8f6;--color-orange:#ffb560;--color-green:#7fbd86;--color-blue:#085fa9}
+:root{--color-dark:#1b4d84;--color-light:#e74125;--color-light-hover:#c83016;--color-group-preschoolers:#547f80;--color-group-pupils:#054e65;--color-group-russian:#f89d00;--color-group-baby:#ee7965;--color-mark:#bdcbd4;--color-music:#ecd8d7;--color-yellow:#ffdf39;--color-lightblue:#8dc8f6;--color-orange:#ffb560;--color-green:#7fbd86;--color-blue:#085fa9}
 .disable-scroll{overflow:hidden;height:100vh;position:fixed;left:0;top:0;width:100%}
 .visually-hidden{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);padding:0!important;border:0!important;height:1px!important;width:1px!important;overflow:hidden}
 [data-title]{position:relative}
@@ -54,8 +54,10 @@
 .timetableButton{position:relative}
 .timetableButton__button{white-space:nowrap;text-align:center;display:block;cursor:pointer;border-radius:4px;padding:10px 20px;border:1px solid;font-size:14px;transition:color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out}
 .timetableButton input:checked+.timetableButton__button,.timetableButton:hover .timetableButton__button{color:#fff}
-.timetableButton_all .timetableButton__button{color:var(--color-group-all);border-color:var(--color-group-all)}
-.timetableButton_all input:checked+.timetableButton__button,.timetableButton_all:hover .timetableButton__button{background-color:var(--color-group-all)}
+.timetableButton_all .timetableButton__button{color:var(--color-dark);border-color:var(--color-dark)}
+.timetableButton_all input:checked+.timetableButton__button,.timetableButton_all:hover .timetableButton__button{background-color:var(--color-dark)}
+.timetableButton_allOnline .timetableButton__button{color:var(--color-light);border-color:var(--color-light)}
+.timetableButton_allOnline input:checked+.timetableButton__button,.timetableButton_allOnline:hover .timetableButton__button{background-color:var(--color-light)}
 .timetableButton_preschoolers .timetableButton__button{color:var(--color-group-preschoolers);border-color:var(--color-group-preschoolers)}
 .timetableButton_preschoolers input:checked+.timetableButton__button,.timetableButton_preschoolers:hover .timetableButton__button{background-color:var(--color-group-preschoolers)}
 .timetableButton_pupils .timetableButton__button{color:var(--color-group-pupils);border-color:var(--color-group-pupils)}
