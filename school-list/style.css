@@ -88,7 +88,7 @@
 .timetableBlock__info{display:flex;align-items:flex-start;width:80%}
 .timetableBlock__lesson{margin:0 14px;width:calc(38% - 28px);position:relative}
 .timetableBlock__lesson span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
-.timetableBlock__teacher{margin:0 14px;width:calc(27% - 28px);display:flex}
+.timetableBlock__teacher{margin:0 14px;width:calc(27% - 28px);display:flex;flex-wrap:wrap}
 .timetableBlock__teacher a,.timetableBlock__teacher span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom:8px}
 .timetableBlock__teacher a:last-child,.timetableBlock__teacher span:last-child{margin-bottom:0}
 .timetableBlock__teacher a{color:var(--color-light-hover);text-decoration:none;position:relative}
@@ -97,6 +97,7 @@
 .timetableBlock__room{display:flex;align-items:center;flex:1;margin:0 14px}
 .timetableBlock__room::before{content:"";display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;color:#212121;height:24px;width:24px;border-radius:50%;background-color:var(--color-mark)}
 .timetableBlock__room[data-index]::before{content:attr(data-index)}
+.timetableBlock__room[data-title]::after{left:40px;top:50%;transform:translateY(-50%);bottom:auto}
 .timetableBlock__room span{display:none}
 .timetableBlock__room_online::before{background-color:var(--color-light);display:none}
 .timetableBlock__room_online span{display:block;color:var(--color-light)}
