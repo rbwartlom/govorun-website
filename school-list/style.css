@@ -88,8 +88,8 @@
 .timetableBlock__info{display:flex;align-items:flex-start;width:80%}
 .timetableBlock__lesson{margin:0 14px;width:calc(38% - 28px);position:relative}
 .timetableBlock__lesson span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
-.timetableBlock__teacher{margin:0 14px;width:calc(27% - 28px);display:flex;flex-wrap:wrap}
-.timetableBlock__teacher a,.timetableBlock__teacher span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom:8px}
+.timetableBlock__teacher{margin:0 14px;width:calc(27% - 28px);display:flex;flex-direction:column;align-items:flex-start}
+.timetableBlock__teacher a,.timetableBlock__teacher span{display:block;max-width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom:8px}
 .timetableBlock__teacher a:last-child,.timetableBlock__teacher span:last-child{margin-bottom:0}
 .timetableBlock__teacher a{color:#858585;text-decoration:none;position:relative}
 .timetableBlock__teacher a::before{content:"";height:1px;position:absolute;bottom:0;right:0;left:0;transition:background-color .2s ease-in-out}
@@ -135,9 +135,9 @@
 .timetableBlock__lesson{width:100%;margin:0;grid-row:1/4}
 .timetableBlock__lesson span{white-space:normal}
 .timetableBlock__location,.timetableBlock__room,.timetableBlock__teacher{width:100%;margin:10px 0 0;color:#858585;font-size:16px;display:flex;align-items:center}
-.timetableBlock__teacher{margin-top:0}
+.timetableBlock__teacher{margin-top:0;align-items:flex-start;position:relative;padding-left:22px}
 .timetableBlock__location::before,.timetableBlock__teacher::before{content:"";display:block;height:16px;width:16px;background-repeat:no-repeat;background-position:center;background-size:contain;margin-right:6px}
-.timetableBlock__teacher::before{background-image:url(icons/teacher.svg)}
+.timetableBlock__teacher::before{background-image:url(icons/teacher.svg);position:absolute;top:12px;left:0;transform:translateY(-50%)}
 .timetableBlock__location::before{background-image:url(icons/location.svg)}
 .timetableBlock__room{order:1}
 .timetableBlock__room::before{width:12px;height:12px;margin:0 8px 0 2px;font-size:8px}
@@ -175,6 +175,9 @@
 .timetableBlock__lesson{font-size:14px;margin-bottom:12px}
 .timetableBlock__location,.timetableBlock__room,.timetableBlock__teacher{font-size:12px;margin-top:8px}
 .timetableBlock__location::before,.timetableBlock__teacher::before{width:12px;height:12px}
+.timetableBlock__teacher{padding-left:18px}
+.timetableBlock__teacher::before{top:9px}
+
 .timetableBlock__room::before{margin:0 6px 0 0}
 .timetableSelect__submit{position:absolute;bottom:0;right:0;left:0}
 }
