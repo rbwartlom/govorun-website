@@ -91,9 +91,9 @@
 .timetableBlock__teacher{margin:0 14px;width:calc(27% - 28px);display:flex;flex-wrap:wrap}
 .timetableBlock__teacher a,.timetableBlock__teacher span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom:8px}
 .timetableBlock__teacher a:last-child,.timetableBlock__teacher span:last-child{margin-bottom:0}
-.timetableBlock__teacher a{color:var(--color-light-hover);text-decoration:none;position:relative}
+.timetableBlock__teacher a{color:#858585;text-decoration:none;position:relative}
 .timetableBlock__teacher a::before{content:"";height:1px;position:absolute;bottom:0;right:0;left:0;transition:background-color .2s ease-in-out}
-.timetableBlock__teacher a:hover::before{background-color:var(--color-light-hover)}
+.timetableBlock__teacher a:hover::before{background-color:#858585}
 .timetableBlock__room{display:flex;align-items:center;flex:1;margin:0 14px}
 .timetableBlock__room::before{content:"";display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;color:#212121;height:24px;width:24px;border-radius:50%;background-color:var(--color-mark)}
 .timetableBlock__room[data-index]::before{content:attr(data-index)}
@@ -109,9 +109,9 @@
 .timetableBlock__room_green::before{background-color:var(--color-green)}
 .timetableBlock__location{margin:0 14px;width:calc(25% - 28px);display:flex}
 .timetableBlock__location a,.timetableBlock__location span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
-.timetableBlock__location a{color:var(--color-light-hover);text-decoration:none;position:relative}
+.timetableBlock__location a{color:#858585;text-decoration:none;position:relative}
 .timetableBlock__location a::before{content:"";height:1px;position:absolute;bottom:0;right:0;left:0;transition:background-color .2s ease-in-out}
-.timetableBlock__location a:hover::before{background-color:var(--color-light-hover)}
+.timetableBlock__location a:hover::before{background-color:#858585}
 @media screen and (max-width:1199px){
 [data-title]::after{display:none}
 .timetable__title{font-size:28px}
