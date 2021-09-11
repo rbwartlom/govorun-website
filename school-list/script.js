@@ -48,6 +48,8 @@ const initFilter = function(tab) {
 			const targetGroup = block.attr('data-group');
 			const targetClass = targetGroup + ':' + block.attr('data-class');
 
+			block.removeClass('hide');
+
 			if (groups[0] == 'all' || groups.indexOf(targetGroup) != -1) {
 				block.removeClass('hideGroup');
 			} else {
@@ -63,11 +65,29 @@ const initFilter = function(tab) {
 	}
 
 	initCheckboxes(checkboxes, {
-		onChange: filter
+		onChange: function() {
+			const inputs = select.find('[data-element-input]');
+			inputs.prop('checked', false);
+
+			filter();
+		}
 	});
 
 	initSelect(select, {
-		onSubmit: filter
+		onSubmit: function(inputs) {
+			checkboxes.prop('checked', false);
+
+			if (inputs[0]) {
+				inputs.filter(':checked').each(function() {
+					const group = $(this).attr('name').split(':')[0];
+					checkboxes.filter('[name="'+group+'"]').prop('checked', true);
+				});
+			} else {
+				checkboxes.filter('[name="all"]').prop('checked', true);
+			}
+
+			filter();
+		}
 	});
 }
 
@@ -76,16 +96,12 @@ const initCheckboxes = function(checkboxes, params = {}) {
 		const checkbox = $(this);
 		const name = checkbox.attr('name');
 
-		// if (!checkbox.prop('checked') && name === 'all') {
-		// 	e.preventDefault();
-		// 	return false;
-		// }
-
-		if (name === 'all') {
-			checkboxes.filter(':not([name="all"])').prop('checked', false);
-		} else {
-			checkboxes.filter('[name="all"]').prop('checked', false);
+		if (!checkbox.prop('checked')) {
+			e.preventDefault();
+			return false;
 		}
+
+		checkboxes.filter(':not([name="'+name+'"])').prop('checked', false);
 	});
 
 	checkboxes.on('change', function(e) {
@@ -101,6 +117,7 @@ const initSelect = function(select, params = {}) {
 	const submit = select.find('[data-element-submit]');
 
 	const openPopup = function() {
+		inputs.prop('checked', false);
 		select.addClass('open');
 		popup.slideDown(200);
 	}
@@ -131,7 +148,7 @@ const initSelect = function(select, params = {}) {
 		if (submit.hasClass('disabled') || !params.onSubmit) return false;
 		closePopup();
 		submit.addClass('disabled');
-		params.onSubmit();
+		params.onSubmit(inputs.filter(':checked'));
 	});
 }
 
@@ -169,7 +186,21 @@ const initToggleBlocks = function(selector) {
 	}
 }
 
+const initCloseOpenedSelects = function(className) {
+	$(document).on('click', function(e) {
+		const item = $(e.target);
+
+		if (!item.hasClass(className) && !item.parents('.' + className)[0]) {
+			const select = $('.' + className+'.open');
+			const popup = select.find('[data-element-popup]');
+			select.removeClass('open');
+			popup.slideUp(200);
+		}
+	});
+}
+
 $(document).ready(function() {
 	initTimetableTabs('.js-timetable-tab-button', '.js-timetable-tab-element');
 	initToggleBlocks('.js-timetable-block');
+	initCloseOpenedSelects('js-timetable-select');
 });

@@ -344,7 +344,8 @@
 	transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
 }
 
-.timetableButton input:checked + .timetableButton__button {
+.timetableButton input:checked + .timetableButton__button,
+.timetableButton:hover .timetableButton__button {
 	color: #fff;
 }
 
@@ -353,7 +354,8 @@
 	border-color: var(--color-group-all);
 }
 
-.timetableButton_all input:checked + .timetableButton__button {
+.timetableButton_all input:checked + .timetableButton__button,
+.timetableButton_all:hover .timetableButton__button {
 	background-color: var(--color-group-all);
 }
 
@@ -362,7 +364,8 @@
 	border-color: var(--color-group-preschoolers);
 }
 
-.timetableButton_preschoolers input:checked + .timetableButton__button {
+.timetableButton_preschoolers input:checked + .timetableButton__button,
+.timetableButton_preschoolers:hover .timetableButton__button {
 	background-color: var(--color-group-preschoolers);
 }
 
@@ -371,7 +374,8 @@
 	border-color: var(--color-group-pupils);
 }
 
-.timetableButton_pupils input:checked + .timetableButton__button {
+.timetableButton_pupils input:checked + .timetableButton__button,
+.timetableButton_pupils:hover .timetableButton__button {
 	background-color: var(--color-group-pupils);
 }
 
@@ -380,7 +384,8 @@
 	border-color: var(--color-group-russian);
 }
 
-.timetableButton_russian input:checked + .timetableButton__button {
+.timetableButton_russian input:checked + .timetableButton__button,
+.timetableButton_russian:hover .timetableButton__button {
 	background-color: var(--color-group-russian);
 }
 
@@ -389,7 +394,8 @@
 	border-color: var(--color-group-baby);
 }
 
-.timetableButton_baby input:checked + .timetableButton__button {
+.timetableButton_baby input:checked + .timetableButton__button,
+.timetableButton_baby:hover .timetableButton__button {
 	background-color: var(--color-group-baby);
 }
 
@@ -399,6 +405,7 @@
 	position: relative;
 }
 
+.timetableBlock.hide,
 .timetableBlock.hideGroup,
 .timetableBlock.hideClass {
 	display: none;
@@ -548,9 +555,11 @@
 .timetableBlock__teacher {
 	margin: 0 14px;
 	width: calc(27% - 28px);
+	display: flex;
 }
 
-.timetableBlock__teacher span {
+.timetableBlock__teacher span,
+.timetableBlock__teacher a {
 	display: block;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -558,8 +567,29 @@
 	margin-bottom: 8px;
 }
 
-.timetableBlock__teacher span:last-child {
+.timetableBlock__teacher span:last-child,
+.timetableBlock__teacher a:last-child {
 	margin-bottom: 0;
+}
+
+.timetableBlock__teacher a {
+	color: var(--color-light-hover);
+	text-decoration: none;
+	position: relative;
+}
+
+.timetableBlock__teacher a::before {
+	content: '';
+	height: 1px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	transition: background-color .2s ease-in-out;
+}
+
+.timetableBlock__teacher a:hover::before {
+	background-color: var(--color-light-hover);
 }
 
 .timetableBlock__room {
@@ -631,11 +661,33 @@
 .timetableBlock__location {
 	margin: 0 14px;
 	width: calc(25% - 28px);
+	display: flex;
 }
 
-.timetableBlock__location span {
+.timetableBlock__location span,
+.timetableBlock__location a {
 	display: block;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+}
+
+.timetableBlock__location a {
+	color: var(--color-light-hover);
+	text-decoration: none;
+	position: relative;
+}
+
+.timetableBlock__location a::before {
+	content: '';
+	height: 1px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	transition: background-color .2s ease-in-out;
+}
+
+.timetableBlock__location a:hover::before {
+	background-color: var(--color-light-hover);
 }
