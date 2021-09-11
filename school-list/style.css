@@ -2,7 +2,7 @@
 .disable-scroll{overflow:hidden;height:100vh;position:fixed;left:0;top:0;width:100%}
 .visually-hidden{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);padding:0!important;border:0!important;height:1px!important;width:1px!important;overflow:hidden}
 [data-title]{position:relative}
-[data-title]::after{background:rgba(255,255,255,.8);content:attr(data-title);white-space:nowrap;position:absolute;color:#212121;font-size:12px;padding:4px;z-index:1;left:0;bottom:calc(100% + 4px);opacity:0;visibility:hidden;transition:opacity .2s ease-in-out}
+[data-title]::after{background:rgba(255,255,255,.9);content:attr(data-title);white-space:nowrap;position:absolute;color:#212121;font-size:12px;padding:4px;z-index:1;left:0;bottom:calc(100% + 4px);opacity:0;visibility:hidden;transition:opacity .2s ease-in-out}
 [data-title]:hover::after{visibility:visible;opacity:1}
 .timetable{margin-bottom:120px}
 .timetable__title{margin-bottom:48px;font-size:34px;line-height:1.2;font-weight:400}
@@ -97,7 +97,7 @@
 .timetableBlock__room{display:flex;align-items:center;flex:1;margin:0 14px}
 .timetableBlock__room::before{content:"";display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:500;color:#212121;height:24px;width:24px;border-radius:50%;background-color:var(--color-mark)}
 .timetableBlock__room[data-index]::before{content:attr(data-index)}
-.timetableBlock__room[data-title]::after{left:40px;top:50%;transform:translateY(-50%);bottom:auto}
+.timetableBlock__room[data-title]::after{left:28px;top:50%;transform:translateY(-50%);bottom:auto}
 .timetableBlock__room span{display:none}
 .timetableBlock__room_online::before{background-color:var(--color-light);display:none}
 .timetableBlock__room_online span{display:block;color:var(--color-light)}
@@ -178,6 +178,6 @@
 .timetableBlock__room::before{margin:0 6px 0 0}
 .timetableSelect__submit{position:absolute;bottom:0;right:0;left:0}
 }
-@media screen and (max-width:380px){
+@media screen and (max-width:600px){
 .timetable__tabBtn{width:50%;padding:8px}
 }
