@@ -142,7 +142,7 @@
 .timetableBlock__teacher::before{background-image:url(icons/teacher.svg);position:absolute;top:12px;left:0;transform:translateY(-50%)}
 .timetableBlock__location::before{background-image:url(icons/location.svg)}
 .timetableBlock__room{order:1}
-.timetableBlock__room::before{width:12px;height:12px;margin:0 8px 0 2px;font-size:8px}
+.timetableBlock__room::before{width:16px;height:16px;margin-right:6px;font-size:10px}
 .timetableBlock__room span{display:block}
 .timetableBlock__room_online::before{display:block}
 }
@@ -179,8 +179,7 @@
 .timetableBlock__location::before,.timetableBlock__teacher::before{width:12px;height:12px}
 .timetableBlock__teacher{padding-left:18px}
 .timetableBlock__teacher::before{top:9px}
-
-.timetableBlock__room::before{margin:0 6px 0 0}
+.timetableBlock__room::before{width:12px;height:12px;margin-right:6px;font-size:8px}
 .timetableSelect__submit{position:absolute;bottom:0;right:0;left:0}
 }
 @media screen and (max-width:600px){
