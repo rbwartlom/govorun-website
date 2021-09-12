@@ -163,9 +163,11 @@
 .timetableSelect__button{font-size:12px;padding:6px 38px 6px 12px}
 .timetableSelect__button svg{right:19px}
 .timetableSelect__back{position:fixed;bottom:0;right:0;left:0;top:0;z-index:99;background:rgba(0,0,0,.3)}
-.timetableSelect__popup{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;height:calc(100% - 64px);border-radius:4px;width:calc(100% - 64px);padding-bottom:66px}
+.timetableSelect__popup{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;max-height:calc(100% - 64px);border-radius:4px;width:calc(100% - 64px);padding-bottom:66px}
+.timetableSelect__popup::after{content:'';position:absolute;bottom:0;right:0;left:0;height:66px;background-color:#fff}
 .timetableSelect__list{overflow:auto;height:calc(100% - 47px)}
 .timetableSelect__title{display:block}
+.timetableSelect__submit{position:absolute;bottom:0;right:0;left:0;z-index:2}
 .timetableButton__button{font-size:12px;padding:6px 12px}
 .timetableButton__button span{display:none}
 .timetableBlock__button{padding:10px 12px;font-size:12px}
@@ -182,7 +184,6 @@
 .timetableBlock__teacher{padding-left:18px}
 .timetableBlock__teacher::before{top:9px}
 .timetableBlock__room::before{width:12px;height:12px;margin-right:6px;font-size:8px}
-.timetableSelect__submit{position:absolute;bottom:0;right:0;left:0}
 }
 @media screen and (max-width:600px){
 .timetable__tabBtn{width:50%;padding:8px}

@@ -144,13 +144,16 @@ const initSelect = function(select, params = {}) {
 		submit.addClass('disabled');
 		select.addClass('open');
 		back.fadeIn(200);
-		popup.slideDown(200);
+		popup.slideDown(200, function() {
+			window.innerWidth < 768 && popup.css('height', popup.innerHeight());
+		});
 		window.innerWidth < 768 && fixed();
 	}
 
 	const closePopup = function() {
 		select.removeClass('open');
 		back.fadeOut(200);
+		popup.css('height', 'auto');
 		popup.slideUp(200);
 		unfixed();
 	}
@@ -222,6 +225,7 @@ const initCloseOpenedSelects = function(className) {
 			const popup = select.find('[data-element-popup]');
 			select.removeClass('open');
 			back.fadeOut(200);
+			popup.css('height', 'auto');
 			popup.slideUp(200);
 			unfixed();
 		}
