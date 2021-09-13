@@ -171,7 +171,12 @@ const initSelect = function(select, params = {}) {
 	});
 
 	inputs.on('change', function() {
-		submit.removeClass('disabled');
+		const lengthChecked = inputs.filter(':checked').length;
+		if (lengthChecked) {
+			submit.removeClass('disabled');
+		} else {
+			submit.addClass('disabled');
+		}
 	});
 
 	submit.on('click', function() {
