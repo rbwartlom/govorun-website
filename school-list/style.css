@@ -23,7 +23,7 @@
 .timetable__btnGroup{margin:0 12px 20px 0;flex-grow:1}
 .timetable__btnGroup:last-child{margin-right:0}
 .timetable__groups{display:flex;flex-grow:1}
-.timetable__groups::-webkit-scrollbar{width:0}
+.timetable__groups::-webkit-scrollbar{width:0;height:0}
 .timetable__block{position:relative;margin-bottom:1px}
 .timetableSelect{position:relative}
 .timetableSelect.open .timetableSelect__button svg{transform:translate(50%,-50%) rotate(90deg) scale(-1,1)}
@@ -191,7 +191,4 @@
 }
 @media screen and (max-width:600px){
 .timetable__tabBtn{width:50%;padding:12px}
-}
-@media screen and (max-width:479px){
-.timetable__controls{margin-bottom:6px}
 }
