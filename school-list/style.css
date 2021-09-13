@@ -89,8 +89,12 @@
 .timetableBlock__day{margin:0 14px;width:calc(33.33333% - 28px);font-size:22px;line-height:1;text-transform:uppercase;font-weight:500}
 .timetableBlock__time{margin:0 14px;width:calc(66.66666% - 28px)}
 .timetableBlock__info{display:flex;align-items:flex-start;width:80%}
-.timetableBlock__lesson{margin:0 14px;width:calc(38% - 28px);position:relative}
-.timetableBlock__lesson span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.timetableBlock__lesson{margin:0 14px;width:calc(38% - 28px);position:relative;display:flex}
+.timetableBlock__lesson span,.timetableBlock__lesson a{position:relative;display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;font-weight:inherit}
+.timetableBlock__lesson a{color:var(--color-light);transition:color .2s ease-in-out;text-decoration:none}
+.timetableBlock__lesson a::before{content:"";height:1px;position:absolute;bottom:0;right:0;left:0;transition:background-color .2s ease-in-out}
+.timetableBlock__lesson a:hover{color:var(--color-light-hover)}
+.timetableBlock__lesson a:hover::before{background-color:var(--color-light-hover)}
 .timetableBlock__teacher{margin:0 14px;width:calc(27% - 28px);display:flex;flex-direction:column;align-items:flex-start}
 .timetableBlock__teacher a,.timetableBlock__teacher span{display:block;max-width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom:8px}
 .timetableBlock__teacher a:last-child,.timetableBlock__teacher span:last-child{margin-bottom:0}
@@ -133,10 +137,10 @@
 .timetableBlock__date{position:relative;flex-direction:column;justify-content:flex-start}
 .timetableBlock__date::after{border-radius:1px;width:2px;content:"";position:absolute;bottom:0;right:0;top:0}
 .timetableBlock__day{width:calc(100% - 28px);margin-bottom:10px}
-.timetableBlock__time{width:calc(100% - 28px);font-size:14px}
+.timetableBlock__time{width:calc(100% - 28px);font-size:14px;font-weight:500}
 .timetableBlock__info{display:grid;grid-template-columns:calc(55% - 14px) calc(45% - 14px);grid-column-gap:28px;margin:0 14px;width:calc(80% - 28px)}
-.timetableBlock__lesson{width:100%;margin:0;grid-row:1/4}
-.timetableBlock__lesson span{white-space:normal}
+.timetableBlock__lesson{width:100%;margin:0;grid-row:1/4;font-weight:500}
+.timetableBlock__lesson span,.timetableBlock__lesson a{white-space:normal}
 .timetableBlock__location,.timetableBlock__room,.timetableBlock__teacher{width:100%;margin:10px 0 0;color:#858585;font-size:16px;display:flex;align-items:center}
 .timetableBlock__teacher{margin-top:0;align-items:flex-start;position:relative;padding-left:22px}
 .timetableBlock__location::before,.timetableBlock__teacher::before{content:"";display:block;height:16px;width:16px;background-repeat:no-repeat;background-position:center;background-size:contain;margin-right:6px}
@@ -153,14 +157,14 @@
 @media screen and (max-width:767px){
 .timetable__title{font-size:20px;margin-bottom:28px}
 .timetable__tabs{padding-bottom:10px}
-.timetable__tabBtn{font-size:12px;padding:8px 22px}
+.timetable__tabBtn{font-size:12px;padding:12px 22px}
 .timetable__tabBtn::after{height:10px}
 .timetable__tabElement{padding-top:12px}
 .timetable__controls{margin-bottom:24px}
 .timetable__btnGroup,.timetable__select{margin-bottom:12px}
 .timetable__groups{overflow:auto;padding:0 14px;margin:0 -14px}
 .timetable__block{margin-bottom:12px}
-.timetableSelect__button{font-size:12px;padding:6px 38px 6px 12px}
+.timetableSelect__button{font-size:12px;padding:9px 38px 9px 12px}
 .timetableSelect__button svg{right:19px}
 .timetableSelect__back{position:fixed;bottom:0;right:0;left:0;top:0;z-index:99;background:rgba(0,0,0,.3)}
 .timetableSelect__popup{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;max-height:calc(100% - 64px);border-radius:4px;width:calc(100% - 64px);padding-bottom:66px}
@@ -168,7 +172,7 @@
 .timetableSelect__list{overflow:auto;height:calc(100% - 47px)}
 .timetableSelect__title{display:block}
 .timetableSelect__submit{position:absolute;bottom:0;right:0;left:0;z-index:2}
-.timetableButton__button{font-size:12px;padding:6px 12px}
+.timetableButton__button{font-size:12px;padding:9px 12px}
 .timetableButton__button span{display:none}
 .timetableBlock__button{padding:10px 12px;font-size:12px}
 .timetableBlock__button svg{right:24px;padding:5px}
@@ -177,14 +181,14 @@
 .timetableBlock__date{width:35%}
 .timetableBlock__info{width:calc(65% - 28px);display:flex;flex-direction:column}
 .timetableBlock__day{font-size:12px;margin-bottom:4px}
-.timetableBlock__time{font-size:10px}
-.timetableBlock__lesson{font-size:14px;margin-bottom:12px}
-.timetableBlock__location,.timetableBlock__room,.timetableBlock__teacher{font-size:12px;margin-top:8px}
-.timetableBlock__location::before,.timetableBlock__teacher::before{width:12px;height:12px}
+.timetableBlock__time{font-size:12px}
+.timetableBlock__lesson{font-size:16px}
+.timetableBlock__location,.timetableBlock__room,.timetableBlock__teacher{font-size:14px;margin-top:8px}
+.timetableBlock__location::before,.timetableBlock__teacher::before{width:14px;height:14px}
 .timetableBlock__teacher{padding-left:18px}
 .timetableBlock__teacher::before{top:9px}
-.timetableBlock__room::before{width:12px;height:12px;margin-right:6px;font-size:8px}
+.timetableBlock__room::before{width:14px;height:14px;margin-right:6px;font-size:8px}
 }
 @media screen and (max-width:600px){
-.timetable__tabBtn{width:50%;padding:8px}
+.timetable__tabBtn{width:50%;padding:12px}
 }
