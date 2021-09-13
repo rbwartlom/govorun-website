@@ -180,8 +180,8 @@
 .timetableBlock__line{margin-bottom:16px;line-height:1.5}
 .timetableBlock__date{width:35%}
 .timetableBlock__info{width:calc(65% - 28px);display:flex;flex-direction:column}
-.timetableBlock__day{font-size:12px;margin-bottom:4px}
-.timetableBlock__time{font-size:12px}
+.timetableBlock__day{font-size:12px;width:calc(100% - 24px);margin:0 12px 6px}
+.timetableBlock__time{font-size:12px;width:calc(100% - 24px);margin:0 12px;white-space:nowrap}
 .timetableBlock__lesson{font-size:16px}
 .timetableBlock__location,.timetableBlock__room,.timetableBlock__teacher{font-size:14px;margin-top:8px}
 .timetableBlock__location::before,.timetableBlock__teacher::before{width:14px;height:14px}
