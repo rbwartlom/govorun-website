@@ -160,7 +160,7 @@
 .timetable__tabBtn{font-size:12px;padding:12px 22px}
 .timetable__tabBtn::after{height:10px}
 .timetable__tabElement{padding-top:12px}
-.timetable__controls{margin-bottom:24px}
+.timetable__controls{margin-bottom:6px}
 .timetable__btnGroup,.timetable__select{margin-bottom:12px}
 .timetable__groups{overflow:auto;padding:0 14px;margin:0 -14px}
 .timetable__block{margin-bottom:12px}
