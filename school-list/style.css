@@ -91,10 +91,10 @@
 .timetableBlock__info{display:flex;align-items:flex-start;width:80%}
 .timetableBlock__lesson{margin:0 14px;width:calc(38% - 28px);position:relative;display:flex}
 .timetableBlock__lesson span,.timetableBlock__lesson a{position:relative;display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;font-weight:inherit}
-.timetableBlock__lesson a{color:var(--color-light);transition:color .2s ease-in-out;text-decoration:none}
+.timetableBlock__lesson a{color:#212121;transition:color .2s ease-in-out;text-decoration:none}
 .timetableBlock__lesson a::before{content:"";height:1px;position:absolute;bottom:0;right:0;left:0;transition:background-color .2s ease-in-out}
-.timetableBlock__lesson a:hover{color:var(--color-light-hover)}
-.timetableBlock__lesson a:hover::before{background-color:var(--color-light-hover)}
+.timetableBlock__lesson a:hover{color:var(--color-light)}
+.timetableBlock__lesson a:hover::before{background-color:var(--color-light)}
 .timetableBlock__teacher{margin:0 14px;width:calc(27% - 28px);display:flex;flex-direction:column;align-items:flex-start}
 .timetableBlock__teacher a,.timetableBlock__teacher span{display:block;max-width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom:8px}
 .timetableBlock__teacher a:last-child,.timetableBlock__teacher span:last-child{margin-bottom:0}
@@ -148,7 +148,7 @@
 .timetableBlock__location::before{background-image:url(icons/location.svg)}
 .timetableBlock__room{order:1}
 .timetableBlock__room::before{width:16px;height:16px;margin-right:6px;font-size:10px}
-.timetableBlock__room span{display:block}
+.timetableBlock__room span{display:block;max-width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
 .timetableBlock__room_online::before{display:block}
 }
 @media screen and (max-width:991px){
