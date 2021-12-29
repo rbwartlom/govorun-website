@@ -37,10 +37,10 @@
 .timetableSelect__close svg{display:block;padding:5px}
 .timetableSelect__list{position:relative}
 .timetableSelect__subtitle{color:#fff;padding:9px 12px;font-size:13px}
-.timetableSelect__subtitle_preschoolers{background-color:var(--color-group-preschoolers)}
-.timetableSelect__subtitle_pupils{background-color:var(--color-group-pupils)}
-.timetableSelect__subtitle_baby{background-color:var(--color-group-baby)}
-.timetableSelect__subtitle_russian{background-color:var(--color-group-russian)}
+.timetableSelect__subtitle_дошк{background-color:var(--color-group-preschoolers)}
+.timetableSelect__subtitle_школьн{background-color:var(--color-group-pupils)}
+.timetableSelect__subtitle_МиМ{background-color:var(--color-group-baby)}
+.timetableSelect__subtitle_РКИ{background-color:var(--color-group-russian)}
 .timetableSelect__option{position:relative}
 .timetableSelect__submit{display:block;text-align:center;padding:10px 24px;width:calc(100% - 24px);border-radius:4px;border:1px solid var(--color-light);background-color:var(--color-light);color:#fff;margin-top:10px;margin:12px 12px 16px;transition:color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out}
 .timetableSelect__submit.disabled{background-color:#fff;color:var(--color-light)}
@@ -72,10 +72,10 @@
 .timetableBlock.open .timetableBlock__button svg{transform:rotate(90deg) translate(-50%,-50%) scale(-1,1)}
 .timetableBlock.close .timetableBlock__content{opacity:0}
 .timetableBlock::before{content:"";opacity:.1;position:absolute;bottom:0;right:0;left:0;top:0}
-.timetableBlock_preschoolers .timetableBlock__button,.timetableBlock_preschoolers .timetableBlock__date::after,.timetableBlock_preschoolers::before{background-color:var(--color-group-preschoolers)}
-.timetableBlock_pupils .timetableBlock__button,.timetableBlock_pupils .timetableBlock__date::after,.timetableBlock_pupils::before{background-color:var(--color-group-pupils)}
-.timetableBlock_russian .timetableBlock__button,.timetableBlock_russian .timetableBlock__date::after,.timetableBlock_russian::before{background-color:var(--color-group-russian)}
-.timetableBlock_baby .timetableBlock__button,.timetableBlock_baby .timetableBlock__date::after,.timetableBlock_baby::before{background-color:var(--color-group-baby)}
+.timetableBlock_дошк .timetableBlock__button,.timetableBlock_дошк .timetableBlock__date::after,.timetableBlock_дошк::before{background-color:var(--color-group-preschoolers)}
+.timetableBlock_школьн .timetableBlock__button,.timetableBlock_школьн .timetableBlock__date::after,.timetableBlock_школьн::before{background-color:var(--color-group-pupils)}
+.timetableBlock_РКИ .timetableBlock__button,.timetableBlock_РКИ .timetableBlock__date::after,.timetableBlock_РКИ::before{background-color:var(--color-group-russian)}
+.timetableBlock_МиМ .timetableBlock__button,.timetableBlock_МиМ .timetableBlock__date::after,.timetableBlock_МиМ::before{background-color:var(--color-group-baby)}
 .timetableBlock__button{cursor:pointer;width:100%;display:flex;background:0 0;padding:20px 60px 20px 24px;color:#fff;border:none;position:relative;z-index:1;font-size:22px;font-weight:500}
 .timetableBlock__button svg{position:absolute;padding:4px;top:50%;right:34px;transform:rotate(90deg) translate(-50%,-50%);transition:transform .2s ease-in-out}
 .timetableBlock__group{margin-right:24px}
@@ -106,14 +106,18 @@
 .timetableBlock__room[data-index]::before{content:attr(data-index)}
 .timetableBlock__room[data-title]::after{left:28px;top:50%;transform:translateY(-50%);bottom:auto}
 .timetableBlock__room span{display:none}
-.timetableBlock__room_online::before{background-color:var(--color-light);display:none}
-.timetableBlock__room_online span{display:block;color:var(--color-light)}
-.timetableBlock__room_music::before{background-color:var(--color-music);background-image:url(icons/music.svg);background-repeat:no-repeat;background-position:center;background-size:50%}
-.timetableBlock__room_yellow::before{background-color:var(--color-yellow)}
-.timetableBlock__room_lightblue::before{background-color:var(--color-lightblue)}
-.timetableBlock__room_blue::before{background-color:var(--color-blue)}
-.timetableBlock__room_orange::before{background-color:var(--color-orange)}
-.timetableBlock__room_green::before{background-color:var(--color-green)}
+.timetableBlock__room_онлайн::before{background-color:var(--color-light)}
+
+/*
+.timetableBlock__room_онлайн::before{background-color:var(--color-light);display:none}
+.timetableBlock__room_онлайн span{display:block;color:var(--color-light)}
+*/
+.timetableBlock__room_музыкальная-комната::before{background-color:var(--color-music);background-image:url(icons/music.svg);background-repeat:no-repeat;background-position:center;background-size:50%}
+.timetableBlock__room_жёлтая-комната::before{background-color:var(--color-yellow)}
+.timetableBlock__room_голубая-комната::before{background-color:var(--color-lightblue)}
+.timetableBlock__room_синяя-комната::before{background-color:var(--color-blue)}
+.timetableBlock__room_оранжевая-комната::before{background-color:var(--color-orange)}
+.timetableBlock__room_зелёная-комната::before{background-color:var(--color-green)}
 .timetableBlock__location{margin:0 14px;width:calc(25% - 28px);display:flex}
 .timetableBlock__location a,.timetableBlock__location span{display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
 .timetableBlock__location a{color:#858585;text-decoration:none;position:relative}
@@ -149,7 +153,7 @@
 .timetableBlock__room{order:1}
 .timetableBlock__room::before{width:16px;height:16px;margin-right:6px;font-size:10px}
 .timetableBlock__room span{display:block;max-width:100%;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
-.timetableBlock__room_online::before{display:block}
+.timetableBlock__room_онлайн::before{display:block}
 }
 @media screen and (max-width:991px){
 .timetable__groups .timetable__btnGroup{flex-grow:1}
